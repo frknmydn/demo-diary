@@ -22,14 +22,14 @@ jobs:
         run: npm install
       
       - name: Fix Vulnerabilities
-        if: ${{ github.repository == 'frknmydn/demo-auth' }}
+        if: ${{ github.repository == 'frknmydn/demo-diary' }}
         run: npm audit fix --force
       
       - name: Run Security Audit
-        if: ${{ github.repository == 'frknmydn/demo-auth' }}
+        if: ${{ github.repository == 'frknmydn/demo-diary' }}
         run: npm audit --audit-level=low
       
         
       - name: Trigger Notification Step
-        if: ${{ github.repository == 'frknmydn/demo-auth' }}
+        if: ${{ github.repository == 'frknmydn/demo-diary' }}
         run: echo "tests completed"
