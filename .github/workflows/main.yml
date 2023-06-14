@@ -42,7 +42,7 @@ jobs:
         run: docker build -t furkanmeydan/diary .
 
       - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.docker-username }} -p ${{ secrets.docker-password }}
+        run: docker login -u ${{ secrets.docker_username }} -p ${{ secrets.docker_password }}
 
 
       - name: Push Docker image
