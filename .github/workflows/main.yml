@@ -37,3 +37,12 @@ jobs:
       - name: Trigger Notification Step
         if: ${{ github.repository == 'frknmydn/demo-diary' }}
         run: echo "tests completed"
+        
+      - name: Build Docker image
+        run: docker build -t furkanmeydan/diary .
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.docker-login.split(':')[0] }} -p ${{ secrets.docker-login.split(':')[1] }}
+
+      - name: Push Docker image
+        run: docker push furkanmeydan/diary
