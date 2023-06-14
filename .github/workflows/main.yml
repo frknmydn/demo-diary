@@ -29,6 +29,10 @@ jobs:
         if: ${{ github.repository == 'frknmydn/demo-diary' }}
         run: npm audit --audit-level=low
       
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
       - name: Trigger Notification Step
         if: ${{ github.repository == 'frknmydn/demo-diary' }}
